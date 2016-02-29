@@ -1,4 +1,4 @@
-# Speedy 0.1.0 Specification
+# Speedy 0.1.1 Specification
 
 ## The basic formatting of Speedy
 
@@ -35,13 +35,25 @@ There are currently five escape sequences: `\"`, `\;`, `\{`, `\}`, and `\:`.
 
     "She said, \"I wonder where I'll go today?\""
 
-### Integers
+### Numbers
 
-Integers may only use the decimal digits 0 through 9. Currently, there is no support for negative or floating-point numbers, however this is planned in the future.
+Numbers may only use the decimal digits 0 through 9, the minus sign (-), and the decimal point (.).
 
 **Example:**
 
     123
+
+Negative numbers are stored with a minus sign just before the first digit.
+
+**Example:**
+
+    -456
+
+Floating point numbers have a decimal point between the integer part and the fractional part.
+
+**Example:**
+
+    -789.01
 
 ### Boolean values
 
