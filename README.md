@@ -5,7 +5,7 @@
 Currently, Speedy supports:
 
 * Strings
-* Integers
+* Numbers
 * Boolean values
 * Null values
 
