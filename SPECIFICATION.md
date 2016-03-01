@@ -1,4 +1,4 @@
-# Speedy 0.1.1 Specification
+# Speedy 0.1.2 Specification
 
 ## The basic formatting of Speedy
 
@@ -19,7 +19,7 @@ Nested data structures are supported. The nest starts with the root name, then a
 
 ## Data types
 
-The current supported data types are strings, integers, boolean values, and null values.
+The current supported data types are strings, integers, boolean values, null values, and dates.
 
 ### Strings
 
@@ -70,3 +70,11 @@ Nulls are simply the word "null".
 **Example:**
 
     null
+
+### Dates
+
+Dates can obviously just be stored with a simple integer, but this is the more official way to do it: format them YYYYMMDD, and put a "d" at the front. This makes it much easier to quickly scan for a date and find them as fast as possible.
+
+**Example:**
+
+    d20160226
