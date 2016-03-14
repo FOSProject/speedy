@@ -78,3 +78,19 @@ Dates can obviously just be stored with a simple integer, but this is the more o
 **Example:**
 
     d20160226
+
+### Arrays
+
+Arrays are surrounded by square brackets ("\[" and "\]"). Each member of the array is separated by a comma (,).
+
+**Example**:
+
+	\["Array", 3, true, d19700101\]
+
+You can use one of these as a piece of data in a different variable by writing the array name and then the location of the data, surrounded in square brackets. Arrays are zero indexed.
+
+**Example:**
+
+If we wanted to call the date from the previous array named "array":
+
+	data5: array\[3\];
