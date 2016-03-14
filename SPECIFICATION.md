@@ -1,4 +1,4 @@
-# Speedy 0.1.4 Specification
+# Speedy 0.1.5 Specification
 
 ## The basic formatting of Speedy
 
@@ -71,20 +71,20 @@ Nulls are simply the word "null".
 
     null
 
-### Dates
+### Date & time
 
-Dates can obviously just be stored with a simple integer, but this is the more official way to do it: format them YYYYMMDD, and put a "d" at the front. This makes it much easier to quickly scan for a date and find them as fast as possible.
+Date and time can obviously just be stored with a simple integer, but this is the more official way to do it: format them YYYYMMDDHHMMSS, and put a "d" at the front. Use 24 hour time, too. This makes it much easier to quickly scan for a date and find them as fast as possible.
 
 **Example:**
 
-    d20160226
+    d20160226153000
     
 This is fine if you only expect this to be local, but with a more global program it's trickier due to timezones. In order to fix this, a little + or - sign is added at the end, along with a float saying the amount of hours away from UTC. If there is no number, nothing is assumed.
 
 **Examples:**
 
-    d20150930-6
-    d20151001+8.5
+    d20150930043012-6
+    d20151001195623+8.5
 
 ### Arrays
 
@@ -92,7 +92,7 @@ Arrays are surrounded by square brackets ("\[" and "\]"). Each member of the arr
 
 **Example**:
 
-	\["Array", 3, true, d19700101\]
+	\["Array", 3, true, d19700101100000\]
 
 You can use one of these as a piece of data in a different variable by writing the array name and then the location of the data, surrounded in square brackets. Arrays are zero indexed.
 
