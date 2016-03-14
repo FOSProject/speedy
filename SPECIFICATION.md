@@ -88,11 +88,11 @@ This is fine if you only expect this to be local, but with a more global program
 
 ### Arrays
 
-Arrays are surrounded by square brackets ("\[" and "\]"). Each member of the array is separated by a comma (,).
+Arrays are surrounded by square brackets ("[" and "]"). Each member of the array is separated by a comma (,).
 
 **Example**:
 
-	\["Array", 3, true, d19700101100000\]
+	["Array", 3, true, d19700101100000]
 
 You can use one of these as a piece of data in a different variable by writing the array name and then the location of the data, surrounded in square brackets. Arrays are zero indexed.
 
@@ -100,4 +100,4 @@ You can use one of these as a piece of data in a different variable by writing t
 
 If we wanted to call the date from the previous array named "array":
 
-	data5: array\[3\];
+	data5: array[3];
