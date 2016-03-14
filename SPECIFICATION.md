@@ -1,4 +1,4 @@
-# Speedy 0.1.2 Specification
+# Speedy 0.1.4 Specification
 
 ## The basic formatting of Speedy
 
@@ -78,6 +78,13 @@ Dates can obviously just be stored with a simple integer, but this is the more o
 **Example:**
 
     d20160226
+    
+This is fine if you only expect this to be local, but with a more global program it's trickier due to timezones. In order to fix this, a little + or - sign is added at the end, along with a float saying the amount of hours away from UTC. If there is no number, nothing is assumed.
+
+**Examples:**
+
+    d20150930-6
+    d20151001+8.5
 
 ### Arrays
 
