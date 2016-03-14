@@ -9,5 +9,6 @@ Currently, Speedy supports:
 * Boolean values
 * Null values
 * Dates
+* Arrays
 
 with more data types to follow in the future.
