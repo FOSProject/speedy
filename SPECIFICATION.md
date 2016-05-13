@@ -1,4 +1,4 @@
-# Speedy 0.1.7 Specification
+# Speedy 0.1.8 Specification
 
 ## Introduction
 
@@ -24,6 +24,14 @@ Nested data structures are supported. The nest starts with the root name, then a
         };
     
 These are more fully documented in the "Nested data" section.
+
+## Document language
+
+This tag is optional, but it is helpful when you make multiple copies of the same data, just in different languages, and you need to quickly parse them. It always goes at the very beginning of the document, and is an ISO 639-3 language code after an exclamation mark (!).
+
+For example, if a document was in Dutch, the document would begin:
+
+        !nld
 
 ## Data types
 
@@ -109,6 +117,12 @@ You can use one of these as a piece of data in a different variable by writing t
 If we wanted to call the date from the previous array named "array":
 
         data5: array[3];
+
+### Languages
+
+Languages are useful if a database needs to determine the particular language of a text document, for example. The format is very similar to describing the language of the actual Speedy document, except it's not placed at the top.
+
+        language: !nld;
 
 ## Nested data
 
