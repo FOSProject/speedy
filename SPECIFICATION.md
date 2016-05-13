@@ -35,7 +35,7 @@ For example, if a document was in Dutch, the document would begin:
 
 ## Data types
 
-The current supported data types are strings, integers, boolean values, null values, and dates.
+The current supported data types are strings, integers, boolean values, null values, dates, arrays, and languages.
 
 ### Strings
 
