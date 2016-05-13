@@ -1,4 +1,4 @@
-# Speedy 0.1.5 Specification
+# Speedy 0.1.6 Specification
 
 ## The basic formatting of Speedy
 
@@ -6,16 +6,18 @@ Any data formatted using Speedy is always given a name first. This name appears 
 
 **Example:**
 
-    data1: "Hello, world!";
+        data1: "Hello, world!";
 
 Nested data structures are supported. The nest starts with the root name, then an opening brace ({), then the nested structure, and finally a closing brace (}).
 
 **Example:**
 
-    data2: {
-        data3: "Hello, world!";
-        data4: "Example text";
-    };
+        data2: {
+                data3: "Hello, world!";
+                data4: "Example text";
+        };
+    
+These are more fully documented in the "Nested data" section.
 
 ## Data types
 
@@ -27,13 +29,13 @@ Strings are surrounded by double quote signs ("), and act like strings normally 
 
 **Example:**
 
-    "Hello, world!"
+        "Hello, world!"
 
 There are currently five escape sequences: `\"`, `\;`, `\{`, `\}`, and `\:`.
 
 **Example:**
 
-    "She said, \"I wonder where I'll go today?\""
+            "She said, \"I wonder where I'll go today?\""
 
 ### Numbers
 
@@ -41,19 +43,19 @@ Numbers may only use the decimal digits 0 through 9, the minus sign (-), and the
 
 **Example:**
 
-    123
+        123
 
 Negative numbers are stored with a minus sign just before the first digit.
 
 **Example:**
 
-    -456
+        -456
 
 Floating point numbers have a decimal point between the integer part and the fractional part.
 
 **Example:**
 
-    -789.01
+        -789.01
 
 ### Boolean values
 
@@ -61,7 +63,7 @@ Booleans are formatted as simply true or false, with no double quotes.
 
 **Example:**
 
-    false
+        false
 
 ### Null values
 
@@ -69,7 +71,7 @@ Nulls are simply the word "null".
 
 **Example:**
 
-    null
+        null
 
 ### Date & time
 
@@ -77,14 +79,14 @@ Date and time can obviously just be stored with a simple integer, but this is th
 
 **Example:**
 
-    d20160226153000
+        d20160226153000
     
 This is fine if you only expect this to be local, but with a more global program it's trickier due to timezones. In order to fix this, a little + or - sign is added at the end, along with a float saying the amount of hours away from UTC. If there is no number, nothing is assumed.
 
 **Examples:**
 
-    d20150930043012-6
-    d20151001195623+8.5
+        d20150930043012-6
+        d20151001195623+8.5
 
 ### Arrays
 
@@ -92,7 +94,7 @@ Arrays are surrounded by square brackets ("[" and "]"). Each member of the array
 
 **Example**:
 
-	["Array", 3, true, d19700101100000]
+        ["Array", 3, true, d19700101100000]
 
 You can use one of these as a piece of data in a different variable by writing the array name and then the location of the data, surrounded in square brackets. Arrays are zero indexed.
 
@@ -100,4 +102,19 @@ You can use one of these as a piece of data in a different variable by writing t
 
 If we wanted to call the date from the previous array named "array":
 
-	data5: array[3];
+        data5: array[3];
+
+## Nested data
+
+Nested data can be used if we wish to use the same variable names for multiple values. For example, if a database of names and ages was being stored, one could simply hold the data like this:
+
+        user1: {
+                name: "Sarah";
+                age: 26;
+        };
+        user2: {
+                name: "Tim";
+                age: 27;
+        };
+
+In order to call the data or reference it in another part of the Speedy document, you can simply call the variables according to their nested positions; for example, `user1.name` or `user2.age`.
