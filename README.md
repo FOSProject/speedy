@@ -10,6 +10,7 @@ Currently, Speedy supports:
 * Null values
 * Dates and times
 * Arrays
+* Languages
 * Nested data
 * Comments
 
