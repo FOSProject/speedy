@@ -1,4 +1,10 @@
-# Speedy 0.1.6 Specification
+# Speedy 0.1.7 Specification
+
+## Introduction
+
+Speedy is a data serialisation format, intended to be easier to read and parse than JSON, while natively supporting as many data types as possible. This is so that applications can easily work together, without having to ask the user what format the data is in - for example, if it is a date or not.
+
+Speedy is strictly UTF-8 encoded. This is to ensure maximum compatibility and simplicity, as well as longevity.
 
 ## The basic formatting of Speedy
 
@@ -118,3 +124,11 @@ Nested data can be used if we wish to use the same variable names for multiple v
         };
 
 In order to call the data or reference it in another part of the Speedy document, you can simply call the variables according to their nested positions; for example, `user1.name` or `user2.age`.
+
+## Comments
+
+Single-line comments are supported in Speedy. Currently, the supported way is to end a line with a #. For example:
+
+        price: 5.00; # dollars and cents
+
+Currently, multi-line comments are not supported.
