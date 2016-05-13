@@ -45,7 +45,7 @@ Strings are surrounded by double quote signs ("), and act like strings normally 
 
         "Hello, world!"
 
-There are currently nine escape sequences: `\"`, `\;`, `\{`, `\}`, `\#`, `\!`, `\[`, `\]` and `\:`.
+There are currently eight escape sequences: `\"`, `\;`, `\{`, `\}`, `\#`, `\[`, `\]` and `\:`.
 
 **Example:**
 
