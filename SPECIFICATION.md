@@ -1,4 +1,4 @@
-# Speedy 0.1.8 Specification
+# Speedy 0.1.9 Specification
 
 ## Introduction
 
@@ -35,7 +35,7 @@ For example, if a document was in Dutch, the document would begin:
 
 ## Data types
 
-The current supported data types are strings, integers, boolean values, null values, dates, arrays, and languages.
+The current supported data types are strings, integers, boolean values, null values, dates, arrays, languages, and files.
 
 ### Strings
 
@@ -123,6 +123,15 @@ If we wanted to call the date from the previous array named "array":
 Languages are useful if a database needs to determine the particular language of a text document, for example. The format is very similar to describing the language of the actual Speedy document, except it's not placed at the top.
 
         language: !nld;
+        
+### Files
+
+The location of files can be just a string, but to make it easier for programs to seek out, there is a way to specify that they are file locations. Start the value with a forward slash (/), before the name and extension of the file. Spaces in the file name are dealt with using a backslash (\\).
+
+        file1: /file.txt;
+        file2: /long\ file\ name.speedy;
+        
+Currently, only files in the same directory as the Speedy file are supported. This is to ensure maximum compatibility with all operating systems.
 
 ## Nested data
 
