@@ -1,0 +1,31 @@
+!eng
+# Example Speedy File
+# This is to show how a Speedy file would look in practice.
+# This is just a simple list of people and information about them. This could be used on an internet forum, for example.
+
+user1: {
+        name: "Jane Smith";
+        age: 32;
+        photo: /user1.png;
+        signature: null;
+        online: true;
+        preferredLanguage: !eng;
+};
+
+user2: {
+        name: "Sarah Livingstone";
+        age: 25;
+        photo: /user2.jpg;
+        signature: "Live every day like it's just another day. Life is hard, yo.";
+        online: false;
+        preferredLanguage: !eng;
+};
+
+user3: {
+        name: "Yamada Hanako";
+        age: 53;
+        photo: /user3.png;
+        signature: null;
+        online: false;
+        preferredLanguage: !jpn;
+};
