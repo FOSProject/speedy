@@ -11,6 +11,7 @@ Currently, Speedy supports:
 * Dates and times
 * Arrays
 * Languages
+* Files
 * Nested data
 * Comments
 
