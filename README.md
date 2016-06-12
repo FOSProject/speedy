@@ -1,6 +1,6 @@
 # Speedy
 
-**Speedy** is a data serialisation format, intended to be as simple as possible. Unlike formats such as JSON and Atom, Speedy can support many different types of data, while still being easy to read.
+**Speedy** is a metadata format, intended to be as simple as possible. Unlike formats such as JSON and Atom, Speedy can support many different types of data, while still being easy to read.
 
 Currently, Speedy supports:
 
