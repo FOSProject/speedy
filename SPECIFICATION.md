@@ -1,16 +1,16 @@
-### Speedy 0.5.0 Specification
+# Speedy 0.5.0 Specification
 
 ## Introduction
 
-# What is Speedy?
+### What is Speedy?
 
 Speedy is a new metadata format, intended to be easier to read and parse than JSON, while natively supporting as many data types as possible. This is so that applications can easily work together, without having to ask the user what format the data is in - for example, if it is a date or not.
 
-# What is Speedy useful for?
+### What is Speedy useful for?
 
 Speedy can be used in any place where metadata is useful; for example, a large amount of files in one directory that need to be organised.
 
-# Encoding
+### Encoding
 
 Speedy is strictly UTF-8 encoded. This is to ensure maximum compatibility and simplicity, as well as longevity; this also helps save space in areas where this is a concern.
 
@@ -45,7 +45,7 @@ If a document was in Dutch, the document would begin:
 
 The supported data types are strings, numbers, booleans, nulls, dates & times, arrays, languages, and files.
 
-# Strings
+### Strings
 
 Strings are surrounded by double quote signs (").
 
@@ -59,7 +59,7 @@ For simplicity, there is only one escape sequence: `\"`. This enables strings to
 
         escapeString: "She said, \"I wonder where I'll go today?\"";
 
-# Numbers
+### Numbers
 
 Numbers may only use the decimal digits 0 through 9, the minus sign (-), and the decimal point (.). Hexadecimal, octal, and binary values are not natively supported; instead, these should be placed within strings.
 
@@ -79,7 +79,7 @@ Floating point numbers have a decimal point between the integer and the fraction
 
         float: 789.01;
 
-# Booleans
+### Booleans
 
 Booleans are formatted as simply true or falce, without quotation marks.
 
@@ -87,7 +87,7 @@ Booleans are formatted as simply true or falce, without quotation marks.
 
         bool: false;
 
-# Nulls
+### Nulls
 
 Nulls are simply the word "null".
 
@@ -95,7 +95,7 @@ Nulls are simply the word "null".
 
         null: null;
 
-# Date & time
+### Date & time
 
 Date and time can be stored with a number; however, there is a built-in method to handle them, to make them easier to scan for. They are formatted as `YYYYMMDDHHMMSS`, with a letter "d" at the front, using 24-hour time.
 
@@ -114,7 +114,7 @@ If timezones are required, they may be added with a little plus (+) or minus (-)
         datetimezone1: d20150930043012-6;
         datetimezone2: d20151001195623+8.5;
 
-# Arrays
+### Arrays
 
 Arrays are surrounded by square brackets (\[ and \]). Each member of the array is separated by a comma (,).
 
@@ -130,7 +130,7 @@ Arrays may be used as data in a different variable by writing the array name and
 
 This would call the date from the previous array.
 
-# Languages
+### Languages
 
 Languages are useful if a database needs to determine the particular language of a text document, for example. The format is very similar to describing the language of the Speedy document itself.
 
@@ -138,7 +138,7 @@ Languages are useful if a database needs to determine the particular language of
 
         language: !eng;
 
-# Files
+### Files
 
 The location of files can be just a string, but like dates, there is a built-in method. Start the value with a forward slash (/), before the name and extension of the file. Spaces in the file name are dealt with using a backslash (\).
 
