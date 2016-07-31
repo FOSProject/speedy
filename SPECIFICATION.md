@@ -4,11 +4,11 @@
 
 ### What is Speedy?
 
-Speedy is a new metadata format, intended to be easier to read and parse than JSON, while natively supporting as many data types as possible. This is so that applications can easily work together, without having to ask the user what format the data is in - for example, if it is a date or not.
+Speedy is a new data serialisation format, intended to be easier to read and parse than JSON, while still being as useful in as many applications as possible.
 
 ### What is Speedy useful for?
 
-Speedy can be used in any place where metadata is useful; for example, a large amount of files in one directory that need to be organised.
+Speedy can be used to create metadata formats that need to be as transparent as possible, such as the deta project.
 
 ### Encoding
 
