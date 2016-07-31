@@ -1,14 +1,14 @@
-# Speedy 0.5.0 Specification
+# Speedy 0.9.0 Specification
 
 ## Introduction
 
 ### What is Speedy?
 
-Speedy is a new metadata format, intended to be easier to read and parse than JSON, while natively supporting as many data types as possible. This is so that applications can easily work together, without having to ask the user what format the data is in - for example, if it is a date or not.
+Speedy is a new data serialisation format, intended to be easier to read and parse than JSON, while still being as useful in as many applications as possible.
 
 ### What is Speedy useful for?
 
-Speedy can be used in any place where metadata is useful; for example, a large amount of files in one directory that need to be organised.
+Speedy can be used to create metadata formats that need to be as transparent as possible, such as the deta project.
 
 ### Encoding
 
@@ -31,23 +31,13 @@ and
 
         name:"Dan";age:23;
 
-## Document Language tag
-
-This tag is optional, but it is helpful when you make multiple copies of the same data, just in different languages, and you need to quickly parse them. It always goes at the very beginning of the document, and is an ISO 639-3 language code after an exclamation mark (!).
-
-**Example:**
-
-If a document was in Dutch, the document would begin:
-
-        !nld;
-
 ## Data types
 
-The supported data types are strings, numbers, booleans, nulls, dates & times, arrays, languages, and files.
+The supported data types are strings, ints and floats, booleans, and nulls.
 
 ### Strings
 
-Strings are surrounded by double quote signs (").
+Strings are surrounded by double quote signs. (").
 
 **Example:**
 
@@ -94,60 +84,6 @@ Nulls are simply the word "null".
 **Example:**
 
         null: null;
-
-### Date & time
-
-Date and time can be stored with a number; however, there is a built-in method to handle them, to make them easier to scan for. They are formatted as `YYYYMMDDHHMMSS`, with a letter "d" at the front, using 24-hour time.
-
-**Example:**
-
-        datetime: d20160226153000;
-
-Note that depending on the precision required, values can be left off the end. Here is an example which is only precise down to the day:
-
-        date: d19980212;
-
-If timezones are required, they may be added with a little plus (+) or minus (-) sign at the end, followed by a float specifying the number of hours away from UTC. If this is not there, nothing is assumed.
-
-**Examples:**
-
-        datetimezone1: d20150930043012-6;
-        datetimezone2: d20151001195623+8.5;
-
-### Arrays
-
-Arrays are surrounded by square brackets (\[ and \]). Each member of the array is separated by a comma (,).
-
-**Example:**
-
-        array: ["This is an array!", 3, true, d19700101];
-
-Arrays may be used as data in a different variable by writing the array name and then the location of the data, surrounded in square brackets. Arrays are zero indexed.
-
-**Example:**
-
-        data5: array[3];
-
-This would call the date from the previous array.
-
-### Languages
-
-Languages are useful if a database needs to determine the particular language of a text document, for example. The format is very similar to describing the language of the Speedy document itself.
-
-**Example:**
-
-        language: !eng;
-
-### Files
-
-The location of files can be just a string, but like dates, there is a built-in method. Start the value with a forward slash (/), before the name and extension of the file. Spaces in the file name are dealt with using a backslash (\).
-
-**Example:**
-
-        file1: /file.txt;
-        file2: /long\ file\ name.speedy;
-
-Only files in the same directory as the Speedy file may be formatted this way. This is to ensure maximum compatibility with all file systems.
 
 ## Nested data
 
